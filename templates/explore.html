@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="mdl-layout__container contact-form">
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <center> <h5> Select a region: </h5> </center>
+   <br>
+    <div class="tags">
+      <a href="{{ url_for('exploreusa') }}">
+        <button class="mdl-button mdl-js-button mdl-button--primary tag region" id="europe">
+          USA
+        </button>
+      </a>
+      <a href="{{ url_for('exploreitaly') }}">
+        <button class="mdl-button mdl-js-button mdl-button--primary tag region" id="europe">
+          Europe
+        </button>
+      </a>
+      <a href="{{ url_for('exploretaiwan') }}">
+        <button class="mdl-button mdl-js-button mdl-button--primary tag region" id="europe">
+          Asia
+        </button>
+      </a>
+  </div> 
+   <br>
+   <br>
+
+   <script>
+   var mytags = ["usa", "europe", "asia"];
+   console.log(mytags);
+   window.tags = [];
+   $(".tag").each(function(){
+		if(mytags.indexOf($(this).attr('id')) > -1) {
+				window.tags.push($(this).attr('id'));
+				$(this).toggleClass('mdl-button--accent mdl-button--primary');
+				$(this).addClass('selected-tag');
+			}
+	});
+   </script>
+</div>
+
+{% endblock %}

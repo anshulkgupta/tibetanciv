@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="mdl-layout__container contact-form">
+   <br>
+   <br>
+   <br>
+    <div class="tags">
+      <a href="{{ url_for('exploreusa') }}">
+        <button class="mdl-button mdl-js-button mdl-button--primary tag" id="europe">
+          USA
+        </button>
+      </a>
+      <a href="{{ url_for('exploreitaly') }}">
+        <button class="mdl-button mdl-js-button mdl-button--primary tag" id="europe">
+          Europe
+        </button>
+      </a>
+      <a href="{{ url_for('exploretaiwan') }}">
+        <button class="mdl-button mdl-js-button mdl-button--primary tag" id="europe">
+          Asia
+        </button>
+      </a>
+  </div> 
+
+   <br>
+   <br>
+ <iframe width="100%" height="520" frameborder="0" src="https://anshulkgupta.cartodb.com/viz/6e2f0e40-a456-11e5-a17a-0ecd1babdde5/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+   <script>
+   var mytags = ["usa", "europe", "asia"];
+   console.log(mytags);
+   window.tags = [];
+   $(".tag").each(function(){
+		if(mytags.indexOf($(this).attr('id')) > -1) {
+				window.tags.push($(this).attr('id'));
+				$(this).toggleClass('mdl-button--accent mdl-button--primary');
+				$(this).addClass('selected-tag');
+			}
+	});
+   </script>
+</div>
+
+{% endblock %}
