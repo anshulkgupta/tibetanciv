@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mdl-layout__container contact-form">
+  <h2>Podcast Player</h2>
+  	<div class="podcast">
+      <div class="podcast-text">
+        <h5>Title: {{metadata.title}}</h5>
+        <h5>Artist: {{metadata.artist}}</h5>
+        <h5>Album: {{metadata.album}}</h5>
+        <h5>Description: {{metadata.descr}}</h5>
+        
+        <br>
+      <audio src="static/assets/{{podcast}}" preload="auto" />
+      </div>
+	</div>
+   <br>
+   <br>
+   <br>
+   <a href="{{ url_for('play') }}">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+    	SKIP PODCAST
+    </button>
+   </a>
+</div>
+
+{% endblock %}
