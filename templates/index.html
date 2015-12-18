@@ -2,19 +2,17 @@
 {% block content %}
 
 <div class="home-wrapper">
-  <video autoplay id="bgvid" loop>
-  	<source src="static/assets/bg.mp4" type="video/mp4">
-  </video>
+  <img src="static/assets/bg.jpg"/>
   <div class="home-wrapper-text">
-	  <h1>Discover your next podcast with us.</h1>
-	  <a href="{{ url_for('signin') }}">
+	  <h1>Mapping the spread of<br>Tibetan culture around the world.</h1>
+	  <a href="{{ url_for('index') }}">
 	  	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored text">
-	  	User Login
+	  	Explore the maps
 	  	</button>
   	  </a>
-  	  <a href="{{ url_for('org') }}">
+  	  <a href="{{ url_for('index') }}">
 	  	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored text">
-	  	Organization Login
+	  	Learn More About the Project
 	  	</button>
 	  </a>
   </div>
