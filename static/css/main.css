@@ -2,6 +2,7 @@
   width: 50%;
   display: table;
   margin: 0 auto;
+  font-size: 18px !important;
 }
 
 .table {
